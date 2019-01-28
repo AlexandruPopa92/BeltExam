@@ -1,0 +1,19 @@
+<h3>Know of a pet needing a home?</h3>
+<form (submit)="Add_Pet()">   
+  <label>Pet name:</label>
+  <input type="text" name="pet.name" [(ngModel)]="pet.name" class="form-control col-md-6">
+  <span *ngIf="error" style="color:red"><p *ngIf="error.name">{{error.name.message}}</p></span><br>
+  <span *ngIf="unique" style="color:red"><p>{{unique}}</p></span><br>
+  <label>Pet type:</label>
+  <input type="text" name="pet.type" [(ngModel)]="pet.type" class="form-control col-md-6">
+  <span *ngIf="error" style="color:red"><p *ngIf="error.type">{{error.type.message}}</p></span><br>  
+  <label>Description</label>
+  <input type="text" name="pet.description" [(ngModel)]="pet.description" class="form-control col-md-6">
+  <span *ngIf="error" style="color:red"><p *ngIf="error.description">{{error.description.message}}</p></span><br>  
+  <label>Skills</label>
+  <input type="text" name="pet.skills[0]" [(ngModel)]="pet.skills[0]" class="form-control col-md-6"><br>
+  <input type="text" name="pet.skills[1]" [(ngModel)]="pet.skills[1]" class="form-control col-md-6"><br>
+  <input type="text" name="pet.skills[2]" [(ngModel)]="pet.skills[2]" class="form-control col-md-6"><br>
+  <input type="submit" value="Cancel" class="btn btn-primary" [routerLink]="['/pets']">
+  <input type="submit" value="Submit" class="btn btn-success">
+</form>
